@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kasir Rice Bowl Jundyul</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<h1>🍚 Rice Bowl Jundyul</h1>
+
+
+
+<!-- ================= DASHBOARD ================= -->
+
+<div class="dashboard">
+
+
+<div class="card">
+<h3>Total Penjualan</h3>
+<p id="total">Rp0</p>
+</div>
+
+
+<div class="card">
+<h3>Jumlah Transaksi</h3>
+<p id="jumlah">0</p>
+</div>
+
+
+<div class="card">
+<h3>Tunai</h3>
+<p id="tunai">Rp0</p>
+</div>
+
+
+<div class="card">
+<h3>QRIS</h3>
+<p id="qris">Rp0</p>
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- ================= FORM KASIR ================= -->
+
+
+<div class="form-box">
+
+
+<h2>Input Pesanan</h2>
+
+
+
+<label>
+Nama Pembeli
+</label>
+
+
+<input 
+type="text"
+id="nama"
+placeholder="Masukkan nama pembeli">
+
+
+
+
+
+<label>
+Cup
+</label>
+
+
+<select id="cup">
+
+<option value="">
+Pilih Cup
+</option>
+
+
+<option value="650">
+650 ML
+</option>
+
+
+<option value="800">
+800 ML
+</option>
+
+
+</select>
+
+
+
+
+
+
+<label>
+Menu
+</label>
+
+
+<select id="menu">
+
+<option value="">
+Pilih Menu
+</option>
+
+
+</select>
+
+
+
+
+
+
+
+<label>
+Pilihan Nasi
+</label>
+
+
+<select id="nasi">
+
+
+<option value="">
+Pilih Nasi
+</option>
+
+
+</select>
+
+
+
+
+
+
+
+<label>
+Harga Satuan
+</label>
+
+
+<input
+
+type="text"
+
+id="harga"
+
+readonly
+
+>
+
+
+
+
+
+
+
+
+<label>
+Jumlah
+</label>
+
+
+
+<div class="jumlah-box">
+
+
+<button id="minus">
+-
+</button>
+
+
+<input
+
+type="number"
+
+id="qty"
+
+value="1"
+
+min="1"
+
+readonly
+
+>
+
+
+<button id="plus">
++
+</button>
+
+
+</div>
+
+
+
+
+
+
+<label>
+Total Harga
+</label>
+
+
+<input
+
+type="text"
+
+id="totalHarga"
+
+readonly
+
+>
+
+
+
+
+
+
+
+<label>
+Pembayaran
+</label>
+
+
+<select id="pembayaran">
+
+
+<option value="Tunai">
+Tunai
+</option>
+
+
+<option value="QRIS">
+QRIS
+</option>
+
+
+</select>
+
+
+
+
+
+
+
+<!-- KHUSUS TUNAI -->
+
+
+<div id="tunaiBox">
+
+
+<label>
+Uang Dibayar
+</label>
+
+
+<input
+
+type="number"
+
+id="uang"
+
+placeholder="Masukkan uang">
+
+
+
+
+<label>
+Kembalian
+</label>
+
+
+<input
+
+type="text"
+
+id="kembalian"
+
+readonly
+
+>
+
+
+</div>
+
+
+
+
+
+
+
+<button id="checkout">
+
+✅ LUNAS
+
+</button>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- ================= RIWAYAT ================= -->
+
+
+<div class="history">
+
+
+<h2>
+Riwayat Transaksi
+</h2>
+
+
+
+<table>
+
+
+<thead>
+
+
+<tr>
+
+<th>Tanggal</th>
+
+<th>Jam</th>
+
+<th>Nama</th>
+
+<th>Cup</th>
+
+<th>Menu</th>
+
+<th>Nasi</th>
+
+<th>Qty</th>
+
+<th>Total</th>
+
+<th>Pembayaran</th>
+
+<th>Status</th>
+
+
+</tr>
+
+
+</thead>
+
+
+
+
+<tbody id="historyTable">
+
+
+</tbody>
+
+
+
+</table>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+
+</body>
+
+
+</html>
